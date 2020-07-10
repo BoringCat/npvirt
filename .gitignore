@@ -1,0 +1,8 @@
+.vscode/
+__pycache__/
+.venv/
+
+# local test file
+# which has private information
+
+test/*.xml
