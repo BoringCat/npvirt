@@ -1,0 +1,10 @@
+version: '2'
+services: 
+  backend:
+    image: boringcat/npvirt_backend:latest
+    build: 
+      args: 
+        APT_MIRROR: https://mirrors.sjtug.sjtu.edu.cn
+        APK_MIRROR: mirrors.sjtug.sjtu.edu.cn
+        PIP_MIRROR: https://pypi.tuna.tsinghua.edu.cn/simple
+      context: .
