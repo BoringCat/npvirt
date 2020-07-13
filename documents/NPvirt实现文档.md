@@ -8,7 +8,10 @@
     - [Socket连接](#socket连接)
   - [后端状态检测](#后端状态检测)
   - [获取主机信息](#获取主机信息)
+    - [主机](#主机)
   - [获取虚拟机信息](#获取虚拟机信息)
+  - [存储池管理](#存储池管理)
+    - [存储池状态](#存储池状态)
 - [官方文档翻译理解](#官方文档翻译理解)
   - [getMaxVcpus()](#getmaxvcpus)
   - [getInfo()](#getinfo)
@@ -24,6 +27,7 @@
     - [info()](#info)
     - [isActive()](#isactive)
     - [状态](#状态)
+    - [配置XML文档](#配置xml文档)
 
 ## 功能实现
 ### 连接
@@ -77,6 +81,25 @@ isAlive() 正常返回1，不正常0
 #### 主机
 ### 获取虚拟机信息
 listAllDomains() 返回虚拟机对象
+
+### 存储池管理
+| 功能 | 函数 |
+| :-: | :-: |
+| 获取AutoStart | autostart() |
+| 连接 | create() |
+| 断开连接 | destroy() |
+| 状态 | info()<br>状态<br>总大小<br>已用大小<br>可用大小 |
+| 返回卷列表 | listVolumes() |
+| 返回卷对象 | listAllVolumes() |
+
+#### 存储池状态
+| 常量 | 状态 | 对应int |
+| :-- | :-: | :-: |
+| VIR_STORAGE_POOL_INACTIVE | 未连接 | 0 |
+| VIR_STORAGE_POOL_BUILDING | 创建中 | 1 |
+| VIR_STORAGE_POOL_RUNNING | 已连接 | 2 |
+| VIR_STORAGE_POOL_DEGRADED | 性能下降 | 3 |
+| VIR_STORAGE_POOL_INACCESSIBLE | 无法访问 | 4 |
 
 ## 官方文档翻译理解
 ### getMaxVcpus()
@@ -255,3 +278,6 @@ listAllDomains(?)
 | VIR_DOMAIN_SHUTOFF | 已经关闭的 | 5 |
 | VIR_DOMAIN_CRASHED | 崩溃的 | 6 |
 | VIR_DOMAIN_PMSUSPENDED | 保存状态的(?) | 6 |
+
+#### 配置XML文档
+XMLDesc(libvirt.VIR_DOMAIN_XML_INACTIVE)

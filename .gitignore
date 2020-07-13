@@ -6,3 +6,4 @@ __pycache__/
 # which has private information
 
 test/*.xml
+test/ssh/

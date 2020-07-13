@@ -1,0 +1,1594 @@
+{
+  "capabilities": {
+    "host": {
+      "uuid": "3b5bfa80-fad0-0000-0000-000000000000",
+      "cpuinfo": {
+        "arch": "x86_64",
+        "model": "Skylake-Client-IBRS",
+        "vendor": "Intel",
+        "microcode": {
+          "version": "214"
+        },
+        "counter": {
+          "name": "tsc",
+          "frequency": "2591999000",
+          "scaling": "no"
+        },
+        "topology": {
+          "sockets": "1",
+          "dies": "1",
+          "cores": "4",
+          "threads": "2"
+        },
+        "feature": [
+          "ds",
+          "acpi",
+          "ss",
+          "ht",
+          "tm",
+          "pbe",
+          "dtes64",
+          "monitor",
+          "ds_cpl",
+          "vmx",
+          "est",
+          "tm2",
+          "xtpr",
+          "pdcm",
+          "osxsave",
+          "tsc_adjust",
+          "clflushopt",
+          "intel-pt",
+          "md-clear",
+          "stibp",
+          "ssbd",
+          "xsaves",
+          "pdpe1gb",
+          "invtsc"
+        ],
+        "pages": [
+          {
+            "unit": "KiB",
+            "size": "4"
+          },
+          {
+            "unit": "KiB",
+            "size": "2048"
+          },
+          {
+            "unit": "KiB",
+            "size": "1048576"
+          }
+        ]
+      },
+      "cpu_cells": {
+        "0": {
+          "memory": {
+            "unit": "KiB",
+            "value": "16342888"
+          },
+          "pages": [
+            {
+              "unit": "KiB",
+              "size": "4",
+              "num": "4085722"
+            },
+            {
+              "unit": "KiB",
+              "size": "2048",
+              "num": "0"
+            },
+            {
+              "unit": "KiB",
+              "size": "1048576",
+              "num": "0"
+            }
+          ],
+          "cpu": [
+            {
+              "id": "0",
+              "socket_id": "0",
+              "die_id": "0",
+              "core_id": "0",
+              "siblings": "0,4"
+            },
+            {
+              "id": "1",
+              "socket_id": "0",
+              "die_id": "0",
+              "core_id": "1",
+              "siblings": "1,5"
+            },
+            {
+              "id": "2",
+              "socket_id": "0",
+              "die_id": "0",
+              "core_id": "2",
+              "siblings": "2,6"
+            },
+            {
+              "id": "3",
+              "socket_id": "0",
+              "die_id": "0",
+              "core_id": "3",
+              "siblings": "3,7"
+            },
+            {
+              "id": "4",
+              "socket_id": "0",
+              "die_id": "0",
+              "core_id": "0",
+              "siblings": "0,4"
+            },
+            {
+              "id": "5",
+              "socket_id": "0",
+              "die_id": "0",
+              "core_id": "1",
+              "siblings": "1,5"
+            },
+            {
+              "id": "6",
+              "socket_id": "0",
+              "die_id": "0",
+              "core_id": "2",
+              "siblings": "2,6"
+            },
+            {
+              "id": "7",
+              "socket_id": "0",
+              "die_id": "0",
+              "core_id": "3",
+              "siblings": "3,7"
+            }
+          ]
+        }
+      },
+      "cpu_caches": [
+        {
+          "id": "0",
+          "level": "3",
+          "type": "both",
+          "size": "6",
+          "unit": "MiB",
+          "cpus": "0-7"
+        }
+      ]
+    },
+    "guests": {
+      "armv6l": {
+        "os_type": "hvm",
+        "wordsize": "32",
+        "emulator": "/usr/bin/qemu-system-arm",
+        "machine": [
+          {
+            "maxCpus": "1",
+            "name": "integratorcp"
+          },
+          {
+            "maxCpus": "1",
+            "name": "versatileab"
+          },
+          {
+            "maxCpus": "2",
+            "name": "smdkc210"
+          },
+          {
+            "maxCpus": "2",
+            "name": "nuri"
+          },
+          {
+            "maxCpus": "2",
+            "name": "palmetto-bmc"
+          },
+          {
+            "maxCpus": "1",
+            "name": "microbit"
+          },
+          {
+            "maxCpus": "1",
+            "name": "mainstone"
+          },
+          {
+            "maxCpus": "1",
+            "name": "canon-a1100"
+          },
+          {
+            "maxCpus": "512",
+            "name": "virt-4.2"
+          },
+          {
+            "canonical": "virt-4.2",
+            "maxCpus": "512",
+            "name": "virt"
+          },
+          {
+            "maxCpus": "1",
+            "name": "terrier"
+          },
+          {
+            "maxCpus": "1",
+            "name": "n800"
+          },
+          {
+            "maxCpus": "1",
+            "name": "verdex"
+          },
+          {
+            "maxCpus": "1",
+            "name": "kzm"
+          },
+          {
+            "maxCpus": "1",
+            "name": "versatilepb"
+          },
+          {
+            "maxCpus": "4",
+            "name": "midway"
+          },
+          {
+            "maxCpus": "255",
+            "name": "virt-2.7"
+          },
+          {
+            "maxCpus": "1",
+            "name": "emcraft-sf2"
+          },
+          {
+            "maxCpus": "2",
+            "name": "mcimx7d-sabre"
+          },
+          {
+            "maxCpus": "4",
+            "name": "highbank"
+          },
+          {
+            "maxCpus": "1",
+            "name": "imx25-pdk"
+          },
+          {
+            "maxCpus": "255",
+            "name": "virt-2.11"
+          },
+          {
+            "maxCpus": "1",
+            "name": "n810"
+          },
+          {
+            "maxCpus": "4",
+            "name": "realview-pbx-a9"
+          },
+          {
+            "maxCpus": "1",
+            "name": "tosa"
+          },
+          {
+            "maxCpus": "1",
+            "name": "sx1-v1"
+          },
+          {
+            "maxCpus": "2",
+            "name": "swift-bmc"
+          },
+          {
+            "maxCpus": "1",
+            "name": "mps2-an511"
+          },
+          {
+            "maxCpus": "4",
+            "name": "sabrelite"
+          },
+          {
+            "maxCpus": "2",
+            "name": "musca-a"
+          },
+          {
+            "maxCpus": "1",
+            "name": "realview-pb-a8"
+          },
+          {
+            "maxCpus": "1",
+            "name": "akita"
+          },
+          {
+            "maxCpus": "1",
+            "name": "cubieboard"
+          },
+          {
+            "maxCpus": "255",
+            "name": "virt-2.9"
+          },
+          {
+            "maxCpus": "1",
+            "name": "xilinx-zynq-a9"
+          },
+          {
+            "maxCpus": "512",
+            "name": "virt-3.1"
+          },
+          {
+            "maxCpus": "4",
+            "name": "vexpress-a15"
+          },
+          {
+            "maxCpus": "512",
+            "name": "virt-4.1"
+          },
+          {
+            "maxCpus": "2",
+            "name": "musca-b1"
+          },
+          {
+            "maxCpus": "2",
+            "name": "mps2-an521"
+          },
+          {
+            "maxCpus": "1",
+            "name": "realview-eb"
+          },
+          {
+            "maxCpus": "2",
+            "name": "ast2600-evb"
+          },
+          {
+            "maxCpus": "1",
+            "name": "cheetah"
+          },
+          {
+            "maxCpus": "4",
+            "name": "vexpress-a9"
+          },
+          {
+            "maxCpus": "255",
+            "name": "virt-2.6"
+          },
+          {
+            "maxCpus": "1",
+            "name": "mps2-an505"
+          },
+          {
+            "maxCpus": "1",
+            "name": "spitz"
+          },
+          {
+            "maxCpus": "1",
+            "name": "netduino2"
+          },
+          {
+            "maxCpus": "1",
+            "name": "lm3s6965evb"
+          },
+          {
+            "maxCpus": "255",
+            "name": "virt-2.10"
+          },
+          {
+            "maxCpus": "1",
+            "name": "lm3s811evb"
+          },
+          {
+            "maxCpus": "1",
+            "name": "z2"
+          },
+          {
+            "maxCpus": "4",
+            "name": "raspi2"
+          },
+          {
+            "maxCpus": "1",
+            "name": "connex"
+          },
+          {
+            "maxCpus": "1",
+            "name": "borzoi"
+          },
+          {
+            "maxCpus": "1",
+            "name": "mcimx6ul-evk"
+          },
+          {
+            "maxCpus": "1",
+            "name": "musicpal"
+          },
+          {
+            "maxCpus": "255",
+            "name": "virt-2.8"
+          },
+          {
+            "maxCpus": "2",
+            "name": "ast2500-evb"
+          },
+          {
+            "maxCpus": "512",
+            "name": "virt-3.0"
+          },
+          {
+            "maxCpus": "1",
+            "name": "sx1"
+          },
+          {
+            "maxCpus": "4",
+            "name": "realview-eb-mpcore"
+          },
+          {
+            "maxCpus": "2",
+            "name": "witherspoon-bmc"
+          },
+          {
+            "maxCpus": "2",
+            "name": "romulus-bmc"
+          },
+          {
+            "maxCpus": "512",
+            "name": "virt-4.0"
+          },
+          {
+            "maxCpus": "1",
+            "name": "mps2-an385"
+          },
+          {
+            "maxCpus": "255",
+            "name": "virt-2.12"
+          },
+          {
+            "maxCpus": "1",
+            "name": "collie"
+          }
+        ],
+        "domain": {}
+      },
+      "armv7l": {
+        "os_type": "hvm",
+        "wordsize": "32",
+        "emulator": "/usr/bin/qemu-system-arm",
+        "machine": [
+          {
+            "maxCpus": "1",
+            "name": "integratorcp"
+          },
+          {
+            "maxCpus": "1",
+            "name": "versatileab"
+          },
+          {
+            "maxCpus": "2",
+            "name": "smdkc210"
+          },
+          {
+            "maxCpus": "2",
+            "name": "nuri"
+          },
+          {
+            "maxCpus": "2",
+            "name": "palmetto-bmc"
+          },
+          {
+            "maxCpus": "1",
+            "name": "microbit"
+          },
+          {
+            "maxCpus": "1",
+            "name": "mainstone"
+          },
+          {
+            "maxCpus": "1",
+            "name": "canon-a1100"
+          },
+          {
+            "maxCpus": "512",
+            "name": "virt-4.2"
+          },
+          {
+            "canonical": "virt-4.2",
+            "maxCpus": "512",
+            "name": "virt"
+          },
+          {
+            "maxCpus": "1",
+            "name": "terrier"
+          },
+          {
+            "maxCpus": "1",
+            "name": "n800"
+          },
+          {
+            "maxCpus": "1",
+            "name": "verdex"
+          },
+          {
+            "maxCpus": "1",
+            "name": "kzm"
+          },
+          {
+            "maxCpus": "1",
+            "name": "versatilepb"
+          },
+          {
+            "maxCpus": "4",
+            "name": "midway"
+          },
+          {
+            "maxCpus": "255",
+            "name": "virt-2.7"
+          },
+          {
+            "maxCpus": "1",
+            "name": "emcraft-sf2"
+          },
+          {
+            "maxCpus": "2",
+            "name": "mcimx7d-sabre"
+          },
+          {
+            "maxCpus": "4",
+            "name": "highbank"
+          },
+          {
+            "maxCpus": "1",
+            "name": "imx25-pdk"
+          },
+          {
+            "maxCpus": "255",
+            "name": "virt-2.11"
+          },
+          {
+            "maxCpus": "1",
+            "name": "n810"
+          },
+          {
+            "maxCpus": "4",
+            "name": "realview-pbx-a9"
+          },
+          {
+            "maxCpus": "1",
+            "name": "tosa"
+          },
+          {
+            "maxCpus": "1",
+            "name": "sx1-v1"
+          },
+          {
+            "maxCpus": "2",
+            "name": "swift-bmc"
+          },
+          {
+            "maxCpus": "1",
+            "name": "mps2-an511"
+          },
+          {
+            "maxCpus": "4",
+            "name": "sabrelite"
+          },
+          {
+            "maxCpus": "2",
+            "name": "musca-a"
+          },
+          {
+            "maxCpus": "1",
+            "name": "realview-pb-a8"
+          },
+          {
+            "maxCpus": "1",
+            "name": "akita"
+          },
+          {
+            "maxCpus": "1",
+            "name": "cubieboard"
+          },
+          {
+            "maxCpus": "255",
+            "name": "virt-2.9"
+          },
+          {
+            "maxCpus": "1",
+            "name": "xilinx-zynq-a9"
+          },
+          {
+            "maxCpus": "512",
+            "name": "virt-3.1"
+          },
+          {
+            "maxCpus": "4",
+            "name": "vexpress-a15"
+          },
+          {
+            "maxCpus": "512",
+            "name": "virt-4.1"
+          },
+          {
+            "maxCpus": "2",
+            "name": "musca-b1"
+          },
+          {
+            "maxCpus": "2",
+            "name": "mps2-an521"
+          },
+          {
+            "maxCpus": "1",
+            "name": "realview-eb"
+          },
+          {
+            "maxCpus": "2",
+            "name": "ast2600-evb"
+          },
+          {
+            "maxCpus": "1",
+            "name": "cheetah"
+          },
+          {
+            "maxCpus": "4",
+            "name": "vexpress-a9"
+          },
+          {
+            "maxCpus": "255",
+            "name": "virt-2.6"
+          },
+          {
+            "maxCpus": "1",
+            "name": "mps2-an505"
+          },
+          {
+            "maxCpus": "1",
+            "name": "spitz"
+          },
+          {
+            "maxCpus": "1",
+            "name": "netduino2"
+          },
+          {
+            "maxCpus": "1",
+            "name": "lm3s6965evb"
+          },
+          {
+            "maxCpus": "255",
+            "name": "virt-2.10"
+          },
+          {
+            "maxCpus": "1",
+            "name": "lm3s811evb"
+          },
+          {
+            "maxCpus": "1",
+            "name": "z2"
+          },
+          {
+            "maxCpus": "4",
+            "name": "raspi2"
+          },
+          {
+            "maxCpus": "1",
+            "name": "connex"
+          },
+          {
+            "maxCpus": "1",
+            "name": "borzoi"
+          },
+          {
+            "maxCpus": "1",
+            "name": "mcimx6ul-evk"
+          },
+          {
+            "maxCpus": "1",
+            "name": "musicpal"
+          },
+          {
+            "maxCpus": "255",
+            "name": "virt-2.8"
+          },
+          {
+            "maxCpus": "2",
+            "name": "ast2500-evb"
+          },
+          {
+            "maxCpus": "512",
+            "name": "virt-3.0"
+          },
+          {
+            "maxCpus": "1",
+            "name": "sx1"
+          },
+          {
+            "maxCpus": "4",
+            "name": "realview-eb-mpcore"
+          },
+          {
+            "maxCpus": "2",
+            "name": "witherspoon-bmc"
+          },
+          {
+            "maxCpus": "2",
+            "name": "romulus-bmc"
+          },
+          {
+            "maxCpus": "512",
+            "name": "virt-4.0"
+          },
+          {
+            "maxCpus": "1",
+            "name": "mps2-an385"
+          },
+          {
+            "maxCpus": "255",
+            "name": "virt-2.12"
+          },
+          {
+            "maxCpus": "1",
+            "name": "collie"
+          }
+        ],
+        "domain": {}
+      },
+      "i686": {
+        "os_type": "hvm",
+        "wordsize": "32",
+        "emulator": "/usr/bin/qemu-system-i386",
+        "machine": [
+          {
+            "maxCpus": "255",
+            "name": "pc-i440fx-4.2"
+          },
+          {
+            "canonical": "pc-i440fx-4.2",
+            "maxCpus": "255",
+            "name": "pc"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-0.15"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-i440fx-2.12"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-i440fx-2.0"
+          },
+          {
+            "maxCpus": "1",
+            "name": "xenpv"
+          },
+          {
+            "maxCpus": "288",
+            "name": "pc-q35-4.2"
+          },
+          {
+            "canonical": "pc-q35-4.2",
+            "maxCpus": "288",
+            "name": "q35"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-i440fx-2.5"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-i440fx-1.5"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-0.12"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-q35-2.7"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-i440fx-2.2"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-1.1"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-i440fx-2.7"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-q35-2.4"
+          },
+          {
+            "maxCpus": "288",
+            "name": "pc-q35-2.10"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-i440fx-1.7"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-0.14"
+          },
+          {
+            "maxCpus": "288",
+            "name": "pc-q35-2.9"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-i440fx-2.11"
+          },
+          {
+            "maxCpus": "288",
+            "name": "pc-q35-3.1"
+          },
+          {
+            "maxCpus": "288",
+            "name": "pc-q35-4.1"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-i440fx-2.4"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-1.3"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-i440fx-4.1"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-i440fx-2.9"
+          },
+          {
+            "maxCpus": "1",
+            "name": "isapc"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-i440fx-1.4"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-q35-2.6"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-i440fx-3.1"
+          },
+          {
+            "maxCpus": "128",
+            "name": "xenfv"
+          },
+          {
+            "maxCpus": "288",
+            "name": "pc-q35-2.12"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-i440fx-2.1"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-1.0"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-i440fx-2.6"
+          },
+          {
+            "maxCpus": "288",
+            "name": "pc-q35-4.0.1"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-i440fx-1.6"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-0.13"
+          },
+          {
+            "maxCpus": "288",
+            "name": "pc-q35-2.8"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-i440fx-2.10"
+          },
+          {
+            "maxCpus": "288",
+            "name": "pc-q35-3.0"
+          },
+          {
+            "maxCpus": "288",
+            "name": "pc-q35-4.0"
+          },
+          {
+            "maxCpus": "288",
+            "name": "microvm"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-i440fx-2.3"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-1.2"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-i440fx-4.0"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-i440fx-2.8"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-q35-2.5"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-i440fx-3.0"
+          },
+          {
+            "maxCpus": "288",
+            "name": "pc-q35-2.11"
+          }
+        ],
+        "domain": {}
+      },
+      "x86_64": {
+        "os_type": "hvm",
+        "wordsize": "64",
+        "emulator": "/usr/bin/qemu-system-x86_64",
+        "machine": [
+          {
+            "maxCpus": "255",
+            "name": "pc-i440fx-4.2"
+          },
+          {
+            "canonical": "pc-i440fx-4.2",
+            "maxCpus": "255",
+            "name": "pc"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-0.15"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-i440fx-2.12"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-i440fx-2.0"
+          },
+          {
+            "maxCpus": "1",
+            "name": "xenpv"
+          },
+          {
+            "maxCpus": "288",
+            "name": "pc-q35-4.2"
+          },
+          {
+            "canonical": "pc-q35-4.2",
+            "maxCpus": "288",
+            "name": "q35"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-i440fx-2.5"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-i440fx-1.5"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-q35-2.7"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-0.12"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-i440fx-2.2"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-1.1"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-i440fx-2.7"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-q35-2.4"
+          },
+          {
+            "maxCpus": "288",
+            "name": "pc-q35-2.10"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-i440fx-1.7"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-0.14"
+          },
+          {
+            "maxCpus": "288",
+            "name": "pc-q35-2.9"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-i440fx-2.11"
+          },
+          {
+            "maxCpus": "288",
+            "name": "pc-q35-3.1"
+          },
+          {
+            "maxCpus": "288",
+            "name": "pc-q35-4.1"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-i440fx-2.4"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-1.3"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-i440fx-4.1"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-i440fx-2.9"
+          },
+          {
+            "maxCpus": "1",
+            "name": "isapc"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-i440fx-1.4"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-q35-2.6"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-i440fx-3.1"
+          },
+          {
+            "maxCpus": "128",
+            "name": "xenfv"
+          },
+          {
+            "maxCpus": "288",
+            "name": "pc-q35-2.12"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-i440fx-2.1"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-1.0"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-i440fx-2.6"
+          },
+          {
+            "maxCpus": "288",
+            "name": "pc-q35-4.0.1"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-i440fx-1.6"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-0.13"
+          },
+          {
+            "maxCpus": "288",
+            "name": "pc-q35-2.8"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-i440fx-2.10"
+          },
+          {
+            "maxCpus": "288",
+            "name": "pc-q35-3.0"
+          },
+          {
+            "maxCpus": "288",
+            "name": "pc-q35-4.0"
+          },
+          {
+            "maxCpus": "288",
+            "name": "microvm"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-i440fx-2.3"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-1.2"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-i440fx-4.0"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-i440fx-2.8"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-q35-2.5"
+          },
+          {
+            "maxCpus": "255",
+            "name": "pc-i440fx-3.0"
+          },
+          {
+            "maxCpus": "288",
+            "name": "pc-q35-2.11"
+          }
+        ],
+        "domain": {}
+      }
+    }
+  },
+  "domainCapabilities": {
+    "path": "/usr/bin/qemu-system-x86_64",
+    "domain": "kvm",
+    "machine": "pc-i440fx-4.2",
+    "arch": "x86_64",
+    "vcpu": {
+      "max": "255"
+    },
+    "iothreads": {
+      "supported": "yes"
+    },
+    "cpumode": {
+      "host-passthrough": {
+        "supported": "yes"
+      },
+      "host-model-model": {
+        "fallback": "forbid",
+        "name": "Skylake-Client-IBRS"
+      },
+      "host-model": {
+        "vendor": "Intel",
+        "feature": [
+          {
+            "policy": "require",
+            "name": "ss"
+          },
+          {
+            "policy": "require",
+            "name": "vmx"
+          },
+          {
+            "policy": "require",
+            "name": "hypervisor"
+          },
+          {
+            "policy": "require",
+            "name": "tsc_adjust"
+          },
+          {
+            "policy": "require",
+            "name": "clflushopt"
+          },
+          {
+            "policy": "require",
+            "name": "umip"
+          },
+          {
+            "policy": "require",
+            "name": "md-clear"
+          },
+          {
+            "policy": "require",
+            "name": "stibp"
+          },
+          {
+            "policy": "require",
+            "name": "arch-capabilities"
+          },
+          {
+            "policy": "require",
+            "name": "ssbd"
+          },
+          {
+            "policy": "require",
+            "name": "xsaves"
+          },
+          {
+            "policy": "require",
+            "name": "pdpe1gb"
+          },
+          {
+            "policy": "require",
+            "name": "invtsc"
+          },
+          {
+            "policy": "require",
+            "name": "ibpb"
+          },
+          {
+            "policy": "require",
+            "name": "amd-ssbd"
+          },
+          {
+            "policy": "require",
+            "name": "skip-l1dfl-vmentry"
+          }
+        ]
+      },
+      "custom-model": [
+        {
+          "usable": "yes",
+          "name": "qemu64"
+        },
+        {
+          "usable": "yes",
+          "name": "qemu32"
+        },
+        {
+          "usable": "no",
+          "name": "phenom"
+        },
+        {
+          "usable": "yes",
+          "name": "pentium3"
+        },
+        {
+          "usable": "yes",
+          "name": "pentium2"
+        },
+        {
+          "usable": "yes",
+          "name": "pentium"
+        },
+        {
+          "usable": "yes",
+          "name": "n270"
+        },
+        {
+          "usable": "yes",
+          "name": "kvm64"
+        },
+        {
+          "usable": "yes",
+          "name": "kvm32"
+        },
+        {
+          "usable": "yes",
+          "name": "coreduo"
+        },
+        {
+          "usable": "yes",
+          "name": "core2duo"
+        },
+        {
+          "usable": "no",
+          "name": "athlon"
+        },
+        {
+          "usable": "yes",
+          "name": "Westmere-IBRS"
+        },
+        {
+          "usable": "yes",
+          "name": "Westmere"
+        },
+        {
+          "usable": "no",
+          "name": "Skylake-Server-IBRS"
+        },
+        {
+          "usable": "no",
+          "name": "Skylake-Server"
+        },
+        {
+          "usable": "yes",
+          "name": "Skylake-Client-IBRS"
+        },
+        {
+          "usable": "yes",
+          "name": "Skylake-Client"
+        },
+        {
+          "usable": "yes",
+          "name": "SandyBridge-IBRS"
+        },
+        {
+          "usable": "yes",
+          "name": "SandyBridge"
+        },
+        {
+          "usable": "yes",
+          "name": "Penryn"
+        },
+        {
+          "usable": "no",
+          "name": "Opteron_G5"
+        },
+        {
+          "usable": "no",
+          "name": "Opteron_G4"
+        },
+        {
+          "usable": "no",
+          "name": "Opteron_G3"
+        },
+        {
+          "usable": "yes",
+          "name": "Opteron_G2"
+        },
+        {
+          "usable": "yes",
+          "name": "Opteron_G1"
+        },
+        {
+          "usable": "yes",
+          "name": "Nehalem-IBRS"
+        },
+        {
+          "usable": "yes",
+          "name": "Nehalem"
+        },
+        {
+          "usable": "yes",
+          "name": "IvyBridge-IBRS"
+        },
+        {
+          "usable": "yes",
+          "name": "IvyBridge"
+        },
+        {
+          "usable": "no",
+          "name": "Icelake-Server"
+        },
+        {
+          "usable": "no",
+          "name": "Icelake-Client"
+        },
+        {
+          "usable": "yes",
+          "name": "Haswell-noTSX-IBRS"
+        },
+        {
+          "usable": "yes",
+          "name": "Haswell-noTSX"
+        },
+        {
+          "usable": "yes",
+          "name": "Haswell-IBRS"
+        },
+        {
+          "usable": "yes",
+          "name": "Haswell"
+        },
+        {
+          "usable": "no",
+          "name": "EPYC-IBPB"
+        },
+        {
+          "usable": "no",
+          "name": "EPYC"
+        },
+        {
+          "usable": "no",
+          "name": "Dhyana"
+        },
+        {
+          "usable": "yes",
+          "name": "Conroe"
+        },
+        {
+          "usable": "no",
+          "name": "Cascadelake-Server"
+        },
+        {
+          "usable": "yes",
+          "name": "Broadwell-noTSX-IBRS"
+        },
+        {
+          "usable": "yes",
+          "name": "Broadwell-noTSX"
+        },
+        {
+          "usable": "yes",
+          "name": "Broadwell-IBRS"
+        },
+        {
+          "usable": "yes",
+          "name": "Broadwell"
+        },
+        {
+          "usable": "yes",
+          "name": "486"
+        }
+      ],
+      "custom": {}
+    },
+    "devices": {
+      "disk": {
+        "supported": true,
+        "items": {
+          "diskDevice": [
+            "disk",
+            "cdrom",
+            "floppy",
+            "lun"
+          ],
+          "bus": [
+            "ide",
+            "fdc",
+            "scsi",
+            "virtio",
+            "usb",
+            "sata"
+          ],
+          "model": [
+            "virtio",
+            "virtio-transitional",
+            "virtio-non-transitional"
+          ]
+        }
+      },
+      "graphics": {
+        "supported": true,
+        "items": {
+          "type": [
+            "sdl",
+            "vnc",
+            "spice"
+          ]
+        }
+      },
+      "video": {
+        "supported": true,
+        "items": {
+          "modelType": [
+            "vga",
+            "cirrus",
+            "vmvga",
+            "qxl",
+            "virtio",
+            "none",
+            "bochs",
+            "ramfb"
+          ]
+        }
+      },
+      "hostdev": {
+        "supported": true,
+        "items": {
+          "mode": [
+            "subsystem"
+          ],
+          "startupPolicy": [
+            "default",
+            "mandatory",
+            "requisite",
+            "optional"
+          ],
+          "subsysType": [
+            "usb",
+            "pci",
+            "scsi"
+          ],
+          "capsType": null,
+          "pciBackend": null
+        }
+      },
+      "rng": {
+        "supported": true,
+        "items": {
+          "model": [
+            "virtio",
+            "virtio-transitional",
+            "virtio-non-transitional"
+          ],
+          "backendModel": [
+            "random",
+            "egd",
+            "builtin"
+          ]
+        }
+      }
+    },
+    "features": {
+      "gic": false,
+      "vmcoreinfo": true,
+      "genid": true,
+      "backingStoreInput": true,
+      "backup": false,
+      "sev": false
+    }
+  },
+  "libvirtVersion": "6.1.0",
+  "sysinfo": {
+    "type": "smbios",
+    "bios": {
+      "vendor": "American Megatrends Inc.",
+      "version": "1.05.09",
+      "date": "12/28/2016",
+      "release": "5.11"
+    },
+    "baseBoard": {
+      "manufacturer": "Notebook",
+      "product": "P65xRP",
+      "version": "Not Applicable",
+      "serial": "Not Applicable",
+      "asset": "Tag 12345",
+      "location": "To Be Filled By O.E.M."
+    },
+    "chassis": {
+      "manufacturer": "Notebook",
+      "version": "N/A",
+      "serial": "None",
+      "asset": "No Asset Tag",
+      "sku": "To Be Filled By O.E.M."
+    },
+    "processor": [
+      {
+        "socket_destination": "U3E1",
+        "type": "Central Processor",
+        "family": "Core i7",
+        "manufacturer": "Intel(R) Corporation",
+        "signature": "Type 0, Family 6, Model 94, Stepping 3",
+        "version": "Intel(R) Core(TM) i7-6700HQ CPU @ 2.60GHz",
+        "external_clock": "100 MHz",
+        "max_speed": "8300 MHz",
+        "status": "Populated, Enabled",
+        "serial_number": "To Be Filled By O.E.M.",
+        "part_number": "To Be Filled By O.E.M."
+      }
+    ],
+    "memory_device": [
+      {
+        "size": "8 GB",
+        "form_factor": "SODIMM",
+        "locator": "ChannelB-DIMM0",
+        "bank_locator": "BANK 2",
+        "type": "DDR4",
+        "type_detail": "Synchronous",
+        "speed": "2400 MT/s",
+        "manufacturer": "Samsung",
+        "serial_number": "36FEC5A7",
+        "part_number": "M471A1K43CB1-CRC"
+      },
+      {
+        "size": "8 GB",
+        "form_factor": "SODIMM",
+        "locator": "ChannelB-DIMM1",
+        "bank_locator": "BANK 3",
+        "type": "DDR4",
+        "type_detail": "Synchronous",
+        "speed": "2400 MT/s",
+        "manufacturer": "Samsung",
+        "serial_number": "36FEC7BF",
+        "part_number": "M471A1K43CB1-CRC"
+      }
+    ]
+  },
+  "url": "qemu+ssh://172.17.0.1/system",
+  "type": "QEMU",
+  "vcpus": 8,
+  "totalMemory": 16342888,
+  "qemuVersion": "4.2.0"
+}

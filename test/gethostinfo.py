@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 
-import libvirt
 import xml.etree.ElementTree as ET
 from collections import Counter, defaultdict
 import json
@@ -189,6 +188,10 @@ class VirtHostInfo():
                 if len(self._domainCapabilities_['cpumode'][k]['model']) == 1:
                     tm = self._domainCapabilities_['cpumode'][k]['model'].copy()[0]
                     self._domainCapabilities_['cpumode'][k]['model'] = tm
+                if len(self._domainCapabilities_['cpumode'][k]) == 1:
+                    addkey = tuple(self._domainCapabilities_['cpumode'][k].keys())[0]
+                    self._domainCapabilities_['cpumode'][k+'-'+addkey] = self._domainCapabilities_['cpumode'][k][addkey].copy()
+                    self._domainCapabilities_['cpumode'].pop(k)
                 xmlIf.TextStrip(mode, 'vendor', self._domainCapabilities_['cpumode'][k])
                 xmlIf.AttribList(mode, 'feature', self._domainCapabilities_['cpumode'][k])
         devicesxml = root.find('devices')
@@ -278,15 +281,15 @@ class VirtHostInfo():
                 return False
             func()
             return True
-        # self._reflushcapabilities()
-        # self._reflush_domainCapabilities()
-        # self._reflush_libvirtVersion()
+        self._reflush_capabilities()
+        self._reflush_domainCapabilities()
+        self._reflush_libvirtVersion()
         self._reflush_sysinfo()
-        # self._reflush_url()
-        # self._reflush_type()
-        # self._reflush_vcpus()
-        # self._reflush_totalMemory()
-        # self._reflush_qemuVersion()
+        self._reflush_url()
+        self._reflush_type()
+        self._reflush_vcpus()
+        self._reflush_totalMemory()
+        self._reflush_qemuVersion()
         return True
 
     def get(self, key = None):
@@ -307,9 +310,9 @@ class VirtHostInfo():
     def __str__(self):
         return json.dumps({
             'capabilities': self._capabilities_.getDict(),
-            'domainCapabilities': str(self._domainCapabilities_),
+            'domainCapabilities': self._domainCapabilities_,
             'libvirtVersion': self._libvirtVersion_,
-            'sysinfo': str(self._sysinfo_),
+            'sysinfo': self._sysinfo_,
             'url': self._url_,
             'type': self._type_,
             'vcpus': self._vcpus_,
@@ -318,6 +321,7 @@ class VirtHostInfo():
         })
 
 if __name__ == "__main__":
-    conn = libvirt.open('qemu+tcp://10.17.2.164/system')
+    import libvirt
+    conn = libvirt.open('qemu+ssh://172.17.0.1/system')
     vhio = VirtHostInfo(conn)
     print(json.dumps(vhio.getSysinfo,indent=2))

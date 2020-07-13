@@ -2,12 +2,13 @@ FROM python:3.6.8 AS wheelBuilder
 
 ARG APT_MIRROR
 ARG PIP_MIRROR
+ARG HTTP_PROXY
 
 RUN set -xe\
  && apt_main=`grep -Ev '^#' /etc/apt/sources.list | grep -E ' [a-z]+ main'`\
  && echo ${apt_main} > /etc/apt/sources.list\
- && apt-get update\
- && apt-get install -y ca-certificates apt-transport-https\
+ && http_proxy=${HTTP_PROXY} apt-get update\
+ && http_proxy=${HTTP_PROXY} apt-get install -y ca-certificates apt-transport-https\
  && echo "deb ${APT_MIRROR}/debian/ buster main contrib non-free" > /etc/apt/sources.list\
  && echo "deb ${APT_MIRROR}/debian/ buster-updates main contrib non-free" >> /etc/apt/sources.list\
  && echo "deb ${APT_MIRROR}/debian/ buster-backports main contrib non-free" >> /etc/apt/sources.list\

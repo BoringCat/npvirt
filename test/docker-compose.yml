@@ -7,4 +7,5 @@ services:
         APT_MIRROR: https://mirrors.sjtug.sjtu.edu.cn
         APK_MIRROR: mirrors.sjtug.sjtu.edu.cn
         PIP_MIRROR: https://pypi.tuna.tsinghua.edu.cn/simple
+        HTTP_PROXY: http://192.168.3.253:10808
       context: .
