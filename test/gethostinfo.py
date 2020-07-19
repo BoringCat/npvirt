@@ -188,10 +188,6 @@ class VirtHostInfo():
                 if len(self._domainCapabilities_['cpumode'][k]['model']) == 1:
                     tm = self._domainCapabilities_['cpumode'][k]['model'].copy()[0]
                     self._domainCapabilities_['cpumode'][k]['model'] = tm
-                if len(self._domainCapabilities_['cpumode'][k]) == 1:
-                    addkey = tuple(self._domainCapabilities_['cpumode'][k].keys())[0]
-                    self._domainCapabilities_['cpumode'][k+'-'+addkey] = self._domainCapabilities_['cpumode'][k][addkey].copy()
-                    self._domainCapabilities_['cpumode'].pop(k)
                 xmlIf.TextStrip(mode, 'vendor', self._domainCapabilities_['cpumode'][k])
                 xmlIf.AttribList(mode, 'feature', self._domainCapabilities_['cpumode'][k])
         devicesxml = root.find('devices')
@@ -321,7 +317,7 @@ class VirtHostInfo():
         })
 
 if __name__ == "__main__":
-    import libvirt
-    conn = libvirt.open('qemu+ssh://172.17.0.1/system')
+import libvirt
+conn = libvirt.open('qemu+tcp://172.17.0.1/system')
     vhio = VirtHostInfo(conn)
     print(json.dumps(vhio.getSysinfo,indent=2))

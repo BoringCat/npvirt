@@ -1,40 +1,22 @@
-FROM python:3.6.8 AS wheelBuilder
-
-ARG APT_MIRROR
-ARG PIP_MIRROR
-ARG HTTP_PROXY
-
-RUN set -xe\
- && apt_main=`grep -Ev '^#' /etc/apt/sources.list | grep -E ' [a-z]+ main'`\
- && echo ${apt_main} > /etc/apt/sources.list\
- && http_proxy=${HTTP_PROXY} apt-get update\
- && http_proxy=${HTTP_PROXY} apt-get install -y ca-certificates apt-transport-https\
- && echo "deb ${APT_MIRROR}/debian/ buster main contrib non-free" > /etc/apt/sources.list\
- && echo "deb ${APT_MIRROR}/debian/ buster-updates main contrib non-free" >> /etc/apt/sources.list\
- && echo "deb ${APT_MIRROR}/debian/ buster-backports main contrib non-free" >> /etc/apt/sources.list\
- && echo "deb ${APT_MIRROR}/debian-security buster/updates main contrib non-free" >> /etc/apt/sources.list\
- ;  [ ! -z "${PIP_MIRROR}" ] && pip config set global.index-url ${PIP_MIRROR}\
- ;  apt-get update && apt-get install -y libvirt-dev\
- && pip wheel --wheel-dir=/tmp/wheel/ libvirt-python
-
 FROM python:3.6.8-alpine
 
 ARG APK_MIRROR
 ARG PIP_MIRROR
 
-COPY --from=wheelBuilder /tmp/wheel /tmp/wheel
-RUN set -xe\
- ;  [ ! -z "${APK_MIRROR}" ]\
+RUN set -xe;\
+   [ ! -z "${APK_MIRROR}" ]\
  && sed -e "s/dl-cdn\.alpinelinux\.org/${APK_MIRROR}/g" \
-    -Ee 's!^http://!https://!g' \
-    -i /etc/apk/repositories\
- ;  [ ! -z "${PIP_MIRROR}" ] && pip config set global.index-url ${PIP_MIRROR}\
- ;  apk add --update --no-cache libvirt-libs openssh-client\
- && pip install /tmp/wheel/libvirt*.whl
+      -Ee 's!^http://!https://!g' \
+      -i /etc/apk/repositories;\
+    [ ! -z "${PIP_MIRROR}" ] && pip config set global.index-url ${PIP_MIRROR};\
+    apk add --update --no-cache libvirt-libs openssh-client libxml2 libxslt\
+      libxml2-dev libxslt-dev libvirt-dev gcc musl musl-dev\
+ && pip install libvirt-python lxml\
+ && apk del libxml2-dev libxslt-dev libvirt-dev gcc musl-dev
 
 RUN set -xe\
  && mkdir -p /root/.ssh\
- && chmod 600 /root/.ssh\
+ && chmod 500 /root/.ssh\
  && echo 'Host *' > /root/.ssh/config\
  && echo ' StrictHostKeyChecking no' >> /root/.ssh/config\
  && echo ' IdentityFile /ssh_keys/id_rsa' >> /root/.ssh/config\

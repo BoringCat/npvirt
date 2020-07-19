@@ -10,8 +10,10 @@
   - [获取主机信息](#获取主机信息)
     - [主机](#主机)
   - [获取虚拟机信息](#获取虚拟机信息)
+  - [获取开启的虚拟机的vnc端口](#获取开启的虚拟机的vnc端口)
   - [存储池管理](#存储池管理)
     - [存储池状态](#存储池状态)
+  - [网络列表](#网络列表)
 - [官方文档翻译理解](#官方文档翻译理解)
   - [getMaxVcpus()](#getmaxvcpus)
   - [getInfo()](#getinfo)
@@ -82,6 +84,16 @@ isAlive() 正常返回1，不正常0
 ### 获取虚拟机信息
 listAllDomains() 返回虚拟机对象
 
+### 获取开启的虚拟机的vnc端口
+```py
+import xml.etree.ElementTree as ET
+import libvirt
+conn = libvirt.open()
+dom = conn.lookupByName()
+domxml = ET.fromstring(dom.XMLDesc())
+[n.attrib.get('port',None) for n in domxml.find('devices').findall('graphics') if n.attrib.get('type','') == 'vnc']
+```
+
 ### 存储池管理
 | 功能 | 函数 |
 | :-: | :-: |
@@ -100,6 +112,10 @@ listAllDomains() 返回虚拟机对象
 | VIR_STORAGE_POOL_RUNNING | 已连接 | 2 |
 | VIR_STORAGE_POOL_DEGRADED | 性能下降 | 3 |
 | VIR_STORAGE_POOL_INACCESSIBLE | 无法访问 | 4 |
+
+### 网络列表
+- listAllNetworks() 获取 Libvirt 的网络
+- listAllInterfaces() 减去 Libvirt 的网络
 
 ## 官方文档翻译理解
 ### getMaxVcpus()

@@ -1,0 +1,53 @@
+- [x] name 
+- [x] uuid
+- [x] title
+- [x] description
+- [x] vcpu
+- [x] memory
+- [x] currentMemory
+- [x] cpu
+  - [x] topology
+  - [x] feature
+- [x] os
+  - [x] type
+  - [x] boot
+  - [x] bootmenu
+  - [x] kernel
+  - [x] initrd
+  - [x] cmdline
+- [x] features
+  - [x] hyperv
+- [x] clock (不支持函数修改)
+- [x] on_poweroff
+- [x] on_reboot
+- [x] on_crash
+- [x] on_lockfailure
+- [x] pm
+  - [x] suspend_to_mem
+  - [x] suspend_to_disk
+- [ ] devices
+  - [ ] emulator
+  - [ ] channel
+    - [ ] qemu-qa
+    - [ ] spicevmc
+    - [ ] libguestfs
+  - [ ] disk
+    - [ ] file
+    - [ ] block
+    - [ ] network
+    - [ ] volume
+    - [ ] backingStore
+      - [ ] block
+      - [ ] file
+    - [ ] driver
+    - [ ] iotune
+  - [ ] interface
+    - [ ] network
+    - [ ] bridge
+  - [ ] input
+  - [ ] graphics
+  - [ ] sound
+  - [ ] video
+  - [ ] serial
+  - [ ] channel
+  - [ ] watchdog

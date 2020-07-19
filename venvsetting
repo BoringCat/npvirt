@@ -1,0 +1,4 @@
+BACKEND=''
+API=''
+LIBS='libvirt-python'
+DEV='ipython pylint'

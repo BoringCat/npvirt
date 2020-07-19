@@ -100,6 +100,36 @@ windows用
   </clock>
 ```
 
+## 事件
+- `on_poweroff`: 关机时
+  - `destroy`: 销毁虚拟机对象（默认）
+  - `restart`: 重启虚拟机对象
+  - `preserve`: 停止虚拟机，并保留数据
+  - `rename-restart`: 重命名后重启虚拟机
+- `on_reboot`: 重启时
+  - `destroy`: 销毁虚拟机对象
+  - `restart`: 重启虚拟机对象（默认）
+  - `preserve`: 停止虚拟机，并保留数据
+  - `rename-restart`: 重命名后重启虚拟机
+- `on_crash`: 崩溃时
+  - `destroy`: 销毁虚拟机对象（默认）
+  - `restart`: 重启虚拟机对象
+  - `preserve`: 停止虚拟机，并保留数据
+  - `rename-restart`: 重命名后重启虚拟机
+  - `coredump-destroy`: 保存核心数据后销毁
+  - `coredump-restart`: 保存核心数据后重启
+- `on_lockfailure`: 锁定失败时
+  - `poweroff`: 强制关机
+  - `restart`: 重启并重试
+  - `pause`: 暂停虚拟机，等待手动修复
+  - `ignore`: 继续运行
+```xml
+  <on_poweroff>destroy</on_poweroff>
+  <on_reboot>restart</on_reboot>
+  <on_crash>destroy</on_crash>
+  <on_lockfailure></on_lockfailure>
+```
+
 ## 设备
 ### 可执行文件路径
 ```xml
@@ -111,6 +141,20 @@ windows用
 ```xml
     <channel type="unix">
       <target type="virtio" name="org.qemu.guest_agent.0"/>
+      <address type="virtio-serial" controller="0" bus="0" port="2"/>
+    </channel>
+```
+#### spicevmc
+```xml
+    <channel type='spicevmc'>
+      <target type='virtio' name='com.redhat.spice.0'/>
+      <address type='virtio-serial' controller='0' bus='0' port='1'/>
+    </channel>
+```
+#### libguestfs
+```xml
+    <channel type="unix">
+      <target type="virtio" name="org.libguestfs.channel.0"/>
       <address type="virtio-serial" controller="0" bus="0" port="2"/>
     </channel>
 ```
@@ -159,11 +203,6 @@ type: 与[磁盘](#磁盘)的Type一样
   - `writeback`: 回写 缓存数据，在磁盘空闲或缓存满时写入
   - `directsync`: 垂 直 同 步  直接写入磁盘（不触发主机缓存）
   - `unsafe`: 由主机规则决定
-- `error_policy`: 错误控制
-  - `stop`: 停止（虚拟机? 还是 磁盘?）
-  - `report`: 报错
-  - ``: 忽略
-  - ``: 
 ```xml
       <driver
         name="qemu"
@@ -257,4 +296,105 @@ iscsi
       <target dev='sda' bus='sata' tray='open'/>
       <readonly/>
     </disk>
+```
+
+### 网卡
+`model.type`:
+- rtl8139 (Windows Default)
+- e1000
+- e1000e (If Use able)
+- virtio (Linux Default)
+
+#### 断开
+```xml
+      <link state="down"/>
+```
+#### 虚拟网络（network）
+`mac.address`: MAC地址
+`source.network`: 虚拟网络名称
+`model.type`: 
+```xml
+    <interface type="network">
+      <mac address="52:54:00:45:3f:6b"/>
+      <source network="default"/>
+      <model type="virtio"/>
+    </interface>
+```
+#### 桥接网络
+```xml
+    <interface type="bridge">
+      <mac address="52:54:00:35:7d:a9"/>
+      <source bridge="br0"/>
+      <model type="virtio"/>
+    </interface>
+```
+
+### 输入设备
+固定算了
+```xml
+    <input type="tablet" bus="usb"/>
+    <input type="mouse" bus="ps2"/>
+    <input type="keyboard" bus="ps2"/>
+```
+
+### 显示设备
+```xml
+    <graphics type="vnc" autoport="yes" listen="0.0.0.0">
+      <listen type="address" address="0.0.0.0"/>
+      <image compression="off"/>
+    </graphics>
+```
+
+### 声卡
+```xml
+    <sound model="ich6"/>
+```
+
+### 显卡
+```xml
+    <video>
+      <model type="qxl" ram="65536" vram="65536" vgamem="16384" heads="1" primary="yes"/>
+    </video>
+```
+cirrus、vga、vmvga
+```xml
+    <video>
+      <model type="cirrus" vram="16384" heads="1" primary="yes"/>
+    </video>
+```
+virtio、ramfb
+```xml
+    <video>
+      <model type="virtio" heads="1" primary="yes"/>
+      <model type="ramfb" heads="1" primary="yes"/>
+    </video>
+```
+
+### 串口
+```xml
+    <serial type="pty"/>
+```
+
+### 信道设备
+```xml
+    <channel type="unix">
+      <target type="virtio" name="org.qemu.guest_agent.0"/>
+    </channel>
+```
+
+### 看门狗
+`model`:
+- `i6300esb` 推荐 PCI Intel 6300ESB
+- `ib700` ISA iBase IB700
+- `diag288` S390 DIAG288
+`action`:
+- `reset`: 默认选项，强制重置客户机
+- `shutdown`: 强制关闭客户机（不推荐）
+- `poweroff`: 强制停止客户机
+- `pause`: 暂停客户机
+- `none`: 瞧
+- `dump`: 导出客户机内存（version >= 0.8.7）
+- `inject-nmi`: 插入中断信号（version >= 1.2.17）
+```xml
+    <watchdog model="i6300esb" action="reset"/>
 ```
